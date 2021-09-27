@@ -24,7 +24,7 @@ function draw() {
     textAlign(CENTER, CENTER);
 
     const days = Math.floor(Math.floor(dHrs) / 24);
-    const hours = Math.floor(Math.floor(dMin) % 60);
+    const hours = Math.floor(Math.floor(dHrs) % 24);
     const minutes = Math.floor(Math.floor(dMin) % 60);
     const seconds = Math.floor(Math.floor(dSec) % 60);
 
