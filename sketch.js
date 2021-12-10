@@ -1,4 +1,4 @@
-const END_OF_SEMESTER = new Date('12/6/2021');
+const END_OF_SEMESTER = new Date('12/15/2021');
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
