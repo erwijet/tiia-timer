@@ -1,8 +1,15 @@
-const END_OF_SEMESTER = new Date('12/15/2021');
+const END_DATE = new Date('01/9/2022');
+const START_DATE = new Date('12/14/2021');
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    // frameRate(1);
+}
+
+
+// helper function for grammar
+function condPlural(val) {
+    if (typeof val !== 'number') return '';
+    return val == 1 ? '' : 's';
 }
 
 function draw() {
@@ -15,7 +22,7 @@ function draw() {
     textSize(40);
     fill(255);
 
-    const diffTime = END_OF_SEMESTER - thisMoment;
+    const diffTime = END_DATE - thisMoment;
 
     const dSec = diffTime / 1000;
     const dMin = dSec / 60;
@@ -29,11 +36,11 @@ function draw() {
     const seconds = Math.floor(Math.floor(dSec) % 60);
 
     text(
-        `There Are:\n\n${days} days\n${hours} hours\n${minutes} minutes\nand\n${seconds} seconds\nleft in\nthe semester\n\nwe are ${nf(
-            100 - (diffTime * 100) / (END_OF_SEMESTER - new Date('8/15/2021')),
+        `There ${days == 1 ? "is" : "are"}:\n\n${days} day${condPlural(days)}\n${hours} hour${condPlural(hours)}\n${minutes} minute${condPlural(minutes)}\nand\n${seconds} second${condPlural(seconds)}\n\nleft of break\n\n it is ${nf(
+            100 - (diffTime * 100) / (END_DATE - START_DATE),
             2,
             2
-        )}% done`,
+        )}% over`,
         0,
         0
     );
