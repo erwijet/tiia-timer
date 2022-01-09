@@ -1,5 +1,5 @@
-const END_DATE = new Date('01/9/2022');
-const START_DATE = new Date('12/14/2021');
+const END_DATE = new Date('05/6/2022');
+const START_DATE = new Date('1/9/2022');
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -36,7 +36,7 @@ function draw() {
     const seconds = Math.floor(Math.floor(dSec) % 60);
 
     text(
-        `There ${days == 1 ? "is" : "are"}:\n\n${days} day${condPlural(days)}\n${hours} hour${condPlural(hours)}\n${minutes} minute${condPlural(minutes)}\nand\n${seconds} second${condPlural(seconds)}\n\nleft of break\n\n it is ${nf(
+        `There ${days == 1 ? "is" : "are"}:\n\n${days} day${condPlural(days)}\n${hours} hour${condPlural(hours)}\n${minutes} minute${condPlural(minutes)}\nand\n${seconds} second${condPlural(seconds)}\n\nuntil summer break\n\n the semester is\n${nf(
             100 - (diffTime * 100) / (END_DATE - START_DATE),
             2,
             2
